@@ -129,4 +129,4 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
-AUTH_USER_MODEL = 'auth_app.User'
+AUTH_USER_MODEL = 'user_core.User'

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+User = get_user_model()
 from django.contrib.auth import authenticate, password_validation
 
 
