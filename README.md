@@ -1,1 +1,2 @@
-# medisync-api-restframework
+# Instructions for use of medisync api
+
