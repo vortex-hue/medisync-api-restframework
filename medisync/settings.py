@@ -28,10 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     ## our user dapp
-    'user_core'
+    'user_core',
     
     ## restapi
-    'auth_app',
     'rest_framework',
     'rest_framework.authtoken',
     'drf_yasg',
@@ -129,4 +128,4 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
-AUTH_USER_MODEL = 'user_core.User'
+# AUTH_USER_MODEL = 'user_core.User'
