@@ -27,5 +27,38 @@ class Reminder(models.Model):
     def __str__(self):
         return self.name
     
+    
+class Kyc(models.Model):
+    profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    achievement = models.CharField(max_length=250, null=True, blank=True)
+    location = models.CharField(max_length=250, null=True, blank=True)
+    blood_group = models.CharField(max_length=250, null=True, blank=True)
+    genotype = models.CharField(max_length=250, null=True, blank=True)
+    medical_condition = models.CharField(max_length=250, null=True, blank=True)
+    notification_type = models.CharField(max_length=250, null=True, blank=True)
+    
+    def __str__(self):
+        return self.id
+    
+    
+class Notification(models.Model):
+    profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    title = models.TextField(blank=True,null=True)
+    time = models.DateTimeField(auto_now_add=True)
+    message = models.CharField(max_length=100,blank=True,null=True)
+    read = models.BooleanField(default=False)
 
+    def __str__(self):
+        return f'{self.profile.user.username} - {self.title}'
+    
+    
+class Caregiver(models.Model):
+    profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    fname = models.CharField(max_length=250, null=True, blank=True)
+    lname = models.CharField(max_length=250, null=True, blank=True)
+    email = models.CharField(max_length=250, null=True, blank=True)
+    address = models.CharField(max_length=250, null=True, blank=True)
+    
+    def __str__(self):
+        return self.id
     
